@@ -16,7 +16,7 @@ def lino_unips(pretrained=True, task_name="DiLiGenT", ckpt_path: Optional[str] =
     model = LiNo_UniPS(task_name=task_name, **kwargs)
     if pretrained:
         state_dict = _load_state_dict(ckpt_path)
-        model.load_state_dict(state_dict)
+        model.load_state_dict(state_dict, strict=False)
         model.eval()
         print("load lino_unips successfully")
             
